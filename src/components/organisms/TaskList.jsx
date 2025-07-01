@@ -73,10 +73,9 @@ const TaskList = ({
       toast.error('Failed to update task')
       console.error('Error updating task:', err)
     }
-  }
+}
 
   const handleDeleteTask = async (taskId) => {
-const handleDeleteTask = async (taskId) => {
     try {
       await taskService.delete(taskId)
       setTasks(tasks.filter(t => t.Id !== taskId))
