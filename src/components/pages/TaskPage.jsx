@@ -150,10 +150,11 @@ const TaskPage = () => {
               </div>
             </div>
 
-            <TaskList
+<TaskList
               categoryId={categoryId}
               onEditTask={handleEditTask}
               onTaskUpdate={triggerRefresh}
+              refresh={triggerRefresh}
             />
           </div>
         </motion.div>

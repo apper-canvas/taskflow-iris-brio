@@ -1,15 +1,14 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import TaskCard from '@/components/molecules/TaskCard'
-import SearchBar from '@/components/molecules/SearchBar'
-import FilterBar from '@/components/molecules/FilterBar'
-import Empty from '@/components/ui/Empty'
-import Loading from '@/components/ui/Loading'
-import Error from '@/components/ui/Error'
-import { taskService } from '@/services/api/taskService'
-import { categoryService } from '@/services/api/categoryService'
-import { toast } from 'react-toastify'
-
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { toast } from "react-toastify";
+import TaskCard from "@/components/molecules/TaskCard";
+import SearchBar from "@/components/molecules/SearchBar";
+import FilterBar from "@/components/molecules/FilterBar";
+import Error from "@/components/ui/Error";
+import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import { taskService } from "@/services/api/taskService";
+import { categoryService } from "@/services/api/categoryService";
 const TaskList = ({ 
   categoryId = null, 
   onEditTask, 
@@ -77,6 +76,7 @@ const TaskList = ({
   }
 
   const handleDeleteTask = async (taskId) => {
+const handleDeleteTask = async (taskId) => {
     try {
       await taskService.delete(taskId)
       setTasks(tasks.filter(t => t.Id !== taskId))
