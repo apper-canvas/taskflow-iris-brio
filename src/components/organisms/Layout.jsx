@@ -1,4 +1,9 @@
+import { useContext } from 'react'
 import { Outlet } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { AuthContext } from '@/App'
+import Button from '@/components/atoms/Button'
+import ApperIcon from '@/components/ApperIcon'
 import { motion } from 'framer-motion'
 
 const Layout = () => {
